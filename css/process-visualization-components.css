@@ -1,0 +1,698 @@
+/* Process Visualization Components
+----------------------------------------------- */
+
+/* Implementation Process Section Container */
+.implementation-process {
+    background-color: var(--light);
+    position: relative;
+    overflow: hidden;
+}
+
+.implementation-process:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(46, 196, 182, 0.1) 0%, rgba(46, 196, 182, 0) 70%);
+    border-radius: 50%;
+    z-index: 0;
+}
+
+/* Horizontal Process Steps */
+.process-steps {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    margin: 70px 0;
+    flex-wrap: wrap;
+}
+
+/* Connecting Line Between Process Steps */
+.process-steps:before {
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--teal), var(--navy));
+    z-index: 1;
+    border-radius: 2px;
+}
+
+/* Individual Process Step Container */
+.process-step {
+    position: relative;
+    z-index: 2;
+    flex: 1;
+    min-width: 160px;
+    text-align: center;
+    padding: 20px;
+    transition: var(--transition);
+}
+
+.process-step:hover {
+    transform: translateY(-10px);
+}
+
+/* Step Number Circle */
+.step-number {
+    width: 100px;
+    height: 100px;
+    border-radius: var(--border-radius-circle);
+    background: linear-gradient(135deg, var(--teal), var(--navy));
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0 auto 25px;
+    box-shadow: 0 10px 25px rgba(15, 52, 96, 0.2);
+    position: relative;
+    z-index: 3;
+    border: 5px solid white;
+    transition: var(--transition);
+}
+
+.process-step:hover .step-number {
+    transform: scale(1.1);
+    box-shadow: 0 15px 35px rgba(15, 52, 96, 0.3);
+}
+
+/* Step Title and Description */
+.process-step h4 {
+    font-size: 1.2rem;
+    color: var(--navy);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.process-step p {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0 auto;
+    max-width: 200px;
+}
+
+/* Process Description Card */
+.process-description {
+    background-color: white;
+    border-radius: var(--border-radius-lg);
+    padding: 40px;
+    box-shadow: var(--box-shadow);
+    margin-top: 40px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.process-description p {
+    font-size: 1.1rem;
+    margin-bottom: 0;
+    color: #444;
+}
+
+/* Vertical Process Timeline */
+.process-timeline {
+    position: relative;
+    padding-left: 50px;
+    margin: 50px 0;
+}
+
+.process-timeline:before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    height: 100%;
+    width: 2px;
+    background: linear-gradient(to bottom, var(--teal), var(--navy));
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.timeline-item:last-child {
+    margin-bottom: 0;
+}
+
+.timeline-point {
+    position: absolute;
+    left: -50px;
+    top: 0;
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border: 3px solid var(--teal);
+    border-radius: var(--border-radius-circle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--teal);
+    font-weight: 700;
+    z-index: 2;
+}
+
+.timeline-content {
+    background-color: white;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+    padding: 30px;
+    transition: var(--transition);
+}
+
+.timeline-content:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-hover);
+}
+
+.timeline-title {
+    font-size: 1.3rem;
+    color: var(--navy);
+    margin-bottom: 15px;
+}
+
+/* Circular Process Visualization */
+.process-circular {
+    position: relative;
+    width: 500px;
+    height: 500px;
+    margin: 60px auto;
+}
+
+.process-center {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--navy);
+    border-radius: var(--border-radius-circle);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 700;
+    font-size: 1.2rem;
+    text-align: center;
+    z-index: 2;
+    box-shadow: 0 10px 30px rgba(15, 52, 96, 0.2);
+}
+
+.process-orbit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px dashed rgba(46, 196, 182, 0.3);
+    border-radius: var(--border-radius-circle);
+}
+
+.circular-step {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border-radius: var(--border-radius-circle);
+    background-color: white;
+    box-shadow: var(--box-shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 600;
+    color: var(--navy);
+    transition: var(--transition);
+}
+
+.circular-step:hover {
+    transform: scale(1.1);
+    box-shadow: var(--box-shadow-hover);
+    z-index: 3;
+}
+
+.circular-step:nth-child(1) {
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.circular-step:nth-child(2) {
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+}
+
+.circular-step:nth-child(3) {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.circular-step:nth-child(4) {
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+}
+
+.circular-step:nth-child(1):hover, 
+.circular-step:nth-child(3):hover {
+    transform: translateX(-50%) scale(1.1);
+}
+
+.circular-step:nth-child(2):hover, 
+.circular-step:nth-child(4):hover {
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* Stepped Process Cards */
+.stepped-process {
+    margin: 50px 0;
+}
+
+.step-card {
+    background-color: white;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+    padding: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    position: relative;
+    transition: var(--transition);
+}
+
+.step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-hover);
+}
+
+.step-card:last-child {
+    margin-bottom: 0;
+}
+
+.step-card:after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 30px;
+    width: 2px;
+    height: 20px;
+    background-color: var(--teal);
+    z-index: 1;
+}
+
+.step-card:last-child:after {
+    display: none;
+}
+
+.step-indicator {
+    width: 60px;
+    height: 60px;
+    min-width: 60px;
+    border-radius: var(--border-radius-circle);
+    background-color: var(--teal);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-right: 20px;
+}
+
+.step-content h4 {
+    font-size: 1.3rem;
+    color: var(--navy);
+    margin-bottom: 10px;
+}
+
+/* Alternating Process Flow */
+.alternating-process {
+    margin: 50px 0;
+    position: relative;
+}
+
+.alternating-process:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 2px;
+    background-color: var(--teal);
+    z-index: 1;
+}
+
+.alternating-step {
+    display: flex;
+    margin-bottom: 80px;
+    position: relative;
+}
+
+.alternating-step:last-child {
+    margin-bottom: 0;
+}
+
+.alternating-step:nth-child(odd) {
+    justify-content: flex-end;
+}
+
+.alternating-connector {
+    position: absolute;
+    top: 30px;
+    width: calc(50% - 150px);
+    height: 2px;
+    background-color: var(--teal);
+}
+
+.alternating-step:nth-child(odd) .alternating-connector {
+    left: 0;
+}
+
+.alternating-step:nth-child(even) .alternating-connector {
+    right: 0;
+}
+
+.alternating-content {
+    width: 300px;
+    background-color: white;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+    padding: 30px;
+    transition: var(--transition);
+}
+
+.alternating-content:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-hover);
+}
+
+.alternating-number {
+    position: absolute;
+    top: 15px;
+    width: 50px;
+    height: 50px;
+    border-radius: var(--border-radius-circle);
+    background-color: var(--teal);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    z-index: 2;
+    box-shadow: 0 5px 15px rgba(46, 196, 182, 0.3);
+}
+
+.alternating-step:nth-child(odd) .alternating-number {
+    left: calc(50% - 25px);
+}
+
+.alternating-step:nth-child(even) .alternating-number {
+    right: calc(50% - 25px);
+}
+
+.alternating-title {
+    font-size: 1.2rem;
+    color: var(--navy);
+    margin-bottom: 10px;
+}
+
+/* Process Flowchart */
+.process-flowchart {
+    margin: 50px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flowchart-step {
+    width: 250px;
+    padding: 20px;
+    background-color: white;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    margin-bottom: 30px;
+    position: relative;
+    transition: var(--transition);
+}
+
+.flowchart-step:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow-hover);
+}
+
+.flowchart-step:after {
+    content: '↓';
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1.5rem;
+    color: var(--teal);
+}
+
+.flowchart-step:last-child:after {
+    display: none;
+}
+
+.flowchart-split {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+}
+
+.flowchart-join {
+    margin-top: -15px;
+}
+
+.flowchart-title {
+    font-size: 1.1rem;
+    color: var(--navy);
+    margin-bottom: 5px;
+}
+
+/* Interactive Process Diagram */
+.process-diagram {
+    margin: 50px 0;
+    position: relative;
+}
+
+.diagram-container {
+    width: 100%;
+    height: 400px;
+    background-color: white;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+    position: relative;
+    overflow: hidden;
+}
+
+.diagram-node {
+    position: absolute;
+    width: 120px;
+    height: 70px;
+    background-color: var(--navy);
+    color: white;
+    border-radius: var(--border-radius-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    z-index: 2;
+}
+
+.diagram-node:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(15, 52, 96, 0.3);
+}
+
+.diagram-node.active {
+    background-color: var(--teal);
+}
+
+.diagram-connector {
+    position: absolute;
+    height: 2px;
+    background-color: rgba(15, 52, 96, 0.3);
+    z-index: 1;
+}
+
+.diagram-connector.active {
+    background-color: var(--teal);
+}
+
+.diagram-connector:after {
+    content: '';
+    position: absolute;
+    top: -4px;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid rgba(15, 52, 96, 0.3);
+    border-right: 2px solid rgba(15, 52, 96, 0.3);
+    transform: rotate(45deg);
+}
+
+.diagram-connector.active:after {
+    border-color: var(--teal);
+}
+
+.diagram-info {
+    background-color: white;
+    border-radius: var(--border-radius-lg);
+    box-shadow: var(--box-shadow);
+    padding: 30px;
+    margin-top: 30px;
+}
+
+.diagram-info-title {
+    font-size: 1.3rem;
+    color: var(--navy);
+    margin-bottom: 15px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+    .process-steps:before {
+        display: none;
+    }
+    
+    .process-step {
+        flex-basis: 50%;
+        margin-bottom: 50px;
+    }
+    
+    .process-circular {
+        width: 400px;
+        height: 400px;
+    }
+    
+    .alternating-process:before {
+        left: 30px;
+    }
+    
+    .alternating-step, 
+    .alternating-step:nth-child(odd) {
+        justify-content: flex-start;
+        padding-left: 70px;
+    }
+    
+    .alternating-connector {
+        display: none;
+    }
+    
+    .alternating-number,
+    .alternating-step:nth-child(odd) .alternating-number,
+    .alternating-step:nth-child(even) .alternating-number {
+        left: 5px;
+        right: auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .process-step {
+        flex-basis: 100%;
+    }
+    
+    .process-step:hover {
+        transform: none;
+    }
+    
+    .process-step:hover .step-number {
+        transform: none;
+    }
+    
+    .process-circular {
+        width: 300px;
+        height: 300px;
+    }
+    
+    .process-center {
+        width: 100px;
+        height: 100px;
+        font-size: 1rem;
+    }
+    
+    .circular-step {
+        width: 80px;
+        height: 80px;
+        font-size: 0.9rem;
+    }
+    
+    .timeline-content:hover {
+        transform: none;
+    }
+    
+    .step-card {
+        padding: 20px;
+    }
+    
+    .step-indicator {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+    
+    .alternating-content {
+        width: 100%;
+    }
+    
+    .alternating-step {
+        padding-left: 50px;
+    }
+    
+    .flowchart-split {
+        flex-direction: column;
+        gap: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .process-description {
+        padding: 25px;
+    }
+    
+    .process-timeline {
+        padding-left: 40px;
+    }
+    
+    .process-timeline:before {
+        left: 15px;
+    }
+    
+    .timeline-point {
+        width: 30px;
+        height: 30px;
+        left: -35px;
+    }
+    
+    .process-circular {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .process-center {
+        width: 80px;
+        height: 80px;
+        font-size: 0.9rem;
+    }
+    
+    .circular-step {
+        width: 60px;
+        height: 60px;
+        font-size: 0.8rem;
+    }
+}
