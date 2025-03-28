@@ -19,6 +19,17 @@
     <link rel="stylesheet" href="css/contact-footer-components.css">
     <!-- Responsive Design CSS - Load last to override as needed -->
     <link rel="stylesheet" href="css/responsive-design-components.css">
+    <!-- Add meta description for SEO -->
+    <meta name="description" content="AIAutom8or helps Nigerian businesses automate processes, implement AI solutions, and achieve operational excellence through intelligent automation.">
+    
+    <!-- Add favicon -->
+    <link rel="favicon" href="favicon.ico">
+    
+    <!-- Preload critical assets -->
+    <link rel="preload" href="css/core-foundation.css" as="style">
+    
+    <!-- Defer non-critical JavaScript -->
+    <script src="scripts.js" defer></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -91,7 +102,7 @@
                 <h2>Our Services</h2>
                 <p>Comprehensive automation and AI solutions tailored to your business needs</p>
             </div>
-            <div class="services-grid row">
+            <div class="services-grid row justify-content-center">
                 <div class="service-card col-md-6 col-sm-12">
                     <div class="service-icon">🔄</div>
                     <h3>Workflow Automation</h3>
@@ -125,7 +136,7 @@
             </div>
             <div class="industry-carousel-container">
                 <div class="industry-carousel">
-                    <div class="industry-carousel-inner">
+                    <div class="industry-carousel-inner d-flex flex-wrap justify-content-center">
                         <div class="industry-card">
                             <div class="industry-icon">💰</div>
                             <h3>Finance</h3>
@@ -301,7 +312,7 @@
                 <h2>Solution Packages</h2>
                 <p>Flexible options to match your business needs</p>
             </div>
-            <div class="pricing-grid pricing-cards row">
+            <div class="pricing-grid pricing-cards row justify-content-center align-items-stretch">
                 <div class="pricing-card col-md-4 col-sm-12">
                     <div class="pricing-header">
                         <h3 class="pricing-name">Discovery & Assessment</h3>
@@ -408,7 +419,7 @@
                 <p>Experience and expertise driving your automation success</p>
             </div>
             <div class="about-grid row row-mobile-center">
-                <div class="founder-image col-md-4 col-sm-12"></div>
+                <div class="founder-image col-md-4 col-sm-12" role="img" aria-label="Odunayo Rotimi, Founder of AIAutom8or"></div>
                 <div class="founder-info col-md-8 col-sm-12">
                     <h3>Odunayo Rotimi</h3>
                     <h4>Data & Business Intelligence Specialist</h4>
@@ -436,7 +447,7 @@
             <div class="contact-grid contact-container row">
                 <div class="contact-form col-md-6 col-sm-12">
                     <h3>Send a Message</h3>
-                    <form>
+                    <form id="contact-form" novalidate>
                         <div class="form-row">
                             <div class="form-group">
                                 <label for="name">Your Name</label>
@@ -452,10 +463,18 @@
                             <input type="text" id="company" name="company">
                         </div>
                         <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" pattern="[0-9]{11}" placeholder="+234 XXX XXX XXXX">
+                        </div>
+                        <div class="form-group">
                             <label for="message">Your Message</label>
                             <textarea id="message" name="message" required></textarea>
                         </div>
-                        <button type="submit" class="btn btn-primary">Send Message</button>
+                        <div class="form-message" aria-live="polite"></div>
+                        <button type="submit" class="btn btn-primary" data-loading="false">
+                            <span class="button-text">Send Message</span>
+                            <span class="loading-spinner" hidden>Sending...</span>
+                        </button>
                     </form>
                 </div>
                 <div class="contact-info col-md-6 col-sm-12">
@@ -501,9 +520,9 @@
                     <a href="#" class="footer-logo">AI<span>Autom8or</span></a>
                     <p>Transforming Workflows, Unleashing Potential. We help Nigerian businesses automate processes, implement AI solutions, and achieve operational excellence.</p>
                     <div class="social-links">
-                        <a href="#" class="social-link">f</a>
-                        <a href="#" class="social-link">in</a>
-                        <a href="#" class="social-link">tw</a>
+                        <a href="#" class="social-link" aria-label="Facebook">f</a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">in</a>
+                        <a href="#" class="social-link" aria-label="Twitter">tw</a>
                     </div>
                 </div>
                 <div class="footer-links-column footer-column col-md-6 col-sm-12">
