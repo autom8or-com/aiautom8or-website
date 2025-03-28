@@ -1,0 +1,645 @@
+/* AIAutom8or Responsive Design Components
+----------------------------------------------- */
+
+/*
+This file contains dedicated responsive design components for the AIAutom8or website,
+focusing on:
+1. Media queries for different screen sizes
+2. Mobile-specific layout adjustments
+3. Typography scaling for smaller screens
+4. Component stacking and reordering
+*/
+
+/* ======================================
+   RESPONSIVE BREAKPOINTS
+====================================== */
+
+/* 
+Breakpoint definitions:
+- Extra Large: 1200px and up
+- Large: 992px to 1199px
+- Medium: 768px to 991px
+- Small: 576px to 767px
+- Extra Small: 575px and below
+*/
+
+/* ======================================
+   RESPONSIVE GRID SYSTEM
+====================================== */
+
+/* Basic responsive container adjustments */
+@media (max-width: 1200px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (max-width: 992px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (max-width: 576px) {
+  .container {
+    max-width: 100%;
+    padding: 0 15px;
+  }
+}
+
+/* Responsive grid columns */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+/* Column reordering for mobile */
+@media (max-width: 768px) {
+  .row-reverse-mobile {
+    flex-direction: column-reverse;
+  }
+  
+  .row-mobile-center {
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+/* Column width adjustments */
+@media (max-width: 992px) {
+  .col-md-6 {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+  
+  .col-md-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .col-sm-12 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  [class*="col-"] {
+    margin-bottom: 30px;
+  }
+  
+  [class*="col-"]:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* ======================================
+   RESPONSIVE TYPOGRAPHY
+====================================== */
+
+/* Fluid typography for different screen sizes */
+@media (max-width: 1200px) {
+  html {
+    font-size: 15px;
+  }
+  
+  h1 {
+    font-size: 3rem;
+  }
+  
+  h2 {
+    font-size: 2.25rem;
+  }
+}
+
+@media (max-width: 992px) {
+  html {
+    font-size: 14px;
+  }
+  
+  h1 {
+    font-size: 2.75rem;
+    line-height: 1.2;
+  }
+  
+  h2 {
+    font-size: 2rem;
+  }
+  
+  h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  
+  h1 {
+    font-size: 2.25rem;
+    line-height: 1.3;
+  }
+  
+  h2 {
+    font-size: 1.75rem;
+  }
+  
+  h3 {
+    font-size: 1.35rem;
+  }
+  
+  p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 576px) {
+  html {
+    font-size: 13px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+  }
+  
+  h3 {
+    font-size: 1.25rem;
+  }
+  
+  p {
+    font-size: 0.9rem;
+  }
+}
+
+/* ======================================
+   MOBILE NAVIGATION ADJUSTMENTS
+====================================== */
+
+@media (max-width: 992px) {
+  .nav-container {
+    padding: 15px 0;
+  }
+  
+  .mobile-menu-toggle {
+    display: block;
+  }
+  
+  .nav-menu {
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    width: 80%;
+    height: calc(100vh - 70px);
+    background-color: var(--navy);
+    transition: all 0.4s ease;
+    z-index: 1000;
+    overflow-y: auto;
+    padding: 30px 0;
+  }
+  
+  .nav-menu.active {
+    left: 0;
+  }
+  
+  .nav-menu ul {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .nav-menu ul li {
+    margin: 0;
+    padding: 15px 25px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+  
+  .nav-menu ul li a {
+    color: var(--light);
+    display: block;
+    font-size: 1.1rem;
+  }
+  
+  .overlay-menu {
+    position: fixed;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.4s ease;
+  }
+  
+  .overlay-menu.active {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+/* ======================================
+   HERO SECTION RESPONSIVENESS
+====================================== */
+
+@media (max-width: 992px) {
+  .hero-content {
+    text-align: center;
+    padding: 80px 0;
+  }
+  
+  .hero-animation {
+    max-width: 80%;
+    margin: 40px auto 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-content {
+    padding: 60px 0;
+  }
+  
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .hero-buttons .btn {
+    margin: 10px 0;
+    width: 80%;
+  }
+  
+  .hero-animation {
+    max-width: 100%;
+  }
+}
+
+/* ======================================
+   CARD COMPONENTS RESPONSIVENESS
+====================================== */
+
+@media (max-width: 992px) {
+  .card {
+    padding: 25px;
+  }
+  
+  .service-card, .industry-card {
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .card-container {
+    flex-direction: column;
+  }
+  
+  .card {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+  
+  .card:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* ======================================
+   INDUSTRY SOLUTIONS CAROUSEL
+====================================== */
+
+@media (max-width: 992px) {
+  .industry-carousel {
+    overflow-x: auto;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .industry-carousel::-webkit-scrollbar {
+    height: 5px;
+  }
+  
+  .industry-carousel::-webkit-scrollbar-thumb {
+    background-color: var(--teal);
+    border-radius: 5px;
+  }
+  
+  .industry-carousel-inner {
+    min-width: min-content;
+  }
+  
+  .industry-card {
+    min-width: 280px;
+    margin-right: 20px;
+  }
+}
+
+/* ======================================
+   PROCESS VISUALIZATION RESPONSIVENESS
+====================================== */
+
+@media (max-width: 992px) {
+  .process-timeline {
+    flex-direction: column;
+  }
+  
+  .process-step {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+  
+  .process-step:after {
+    top: auto;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%) rotate(90deg);
+  }
+  
+  .process-step:last-child:after {
+    display: none;
+  }
+}
+
+/* ======================================
+   BENEFITS SECTION RESPONSIVENESS
+====================================== */
+
+@media (max-width: 768px) {
+  .benefit-counter {
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-bottom: 30px;
+  }
+  
+  .benefit-comparison {
+    flex-direction: column;
+  }
+  
+  .benefit-before, .benefit-after {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  
+  .benefit-arrow {
+    transform: rotate(90deg);
+    margin: 0 auto 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .benefit-counter {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  .counter-value {
+    font-size: 2.5rem;
+  }
+}
+
+/* ======================================
+   PRICING PACKAGES RESPONSIVENESS
+====================================== */
+
+@media (max-width: 992px) {
+  .pricing-table {
+    overflow-x: auto;
+    padding-bottom: 20px;
+  }
+  
+  .pricing-table-inner {
+    min-width: 768px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pricing-cards {
+    flex-direction: column;
+  }
+  
+  .pricing-card {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+  
+  .pricing-card:last-child {
+    margin-bottom: 0;
+  }
+  
+  .pricing-calculator {
+    padding: 20px;
+  }
+}
+
+/* ======================================
+   CONTACT FORM RESPONSIVENESS
+====================================== */
+
+@media (max-width: 768px) {
+  .contact-container {
+    flex-direction: column;
+  }
+  
+  .contact-form, .contact-info {
+    width: 100%;
+  }
+  
+  .contact-info {
+    margin-top: 40px;
+    padding-left: 0;
+  }
+  
+  .form-row {
+    flex-direction: column;
+  }
+  
+  .form-group {
+    width: 100%;
+    margin-right: 0;
+  }
+}
+
+/* ======================================
+   INTERACTIVE ELEMENTS RESPONSIVENESS
+====================================== */
+
+@media (max-width: 992px) {
+  .roi-calculator, .solution-configurator {
+    padding: 25px;
+  }
+  
+  .configurator-canvas {
+    min-height: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .chatbot-window {
+    width: 300px;
+    height: 400px;
+  }
+  
+  .chatbot-toggle {
+    width: 50px;
+    height: 50px;
+  }
+  
+  .roi-form-row {
+    flex-direction: column;
+  }
+  
+  .roi-form-group {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+}
+
+/* ======================================
+   FOOTER RESPONSIVENESS
+====================================== */
+
+@media (max-width: 992px) {
+  .footer-content {
+    flex-wrap: wrap;
+  }
+  
+  .footer-column {
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-column {
+    flex: 0 0 100%;
+    max-width: 100%;
+    text-align: center;
+  }
+  
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .footer-social {
+    margin-top: 20px;
+  }
+}
+
+/* ======================================
+   UTILITY CLASSES FOR RESPONSIVE DESIGN
+====================================== */
+
+/* Hide elements based on screen size */
+@media (max-width: 1200px) {
+  .hide-lg {
+    display: none !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .hide-md {
+    display: none !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .hide-sm {
+    display: none !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .hide-xs {
+    display: none !important;
+  }
+}
+
+/* Text alignment responsive classes */
+@media (max-width: 768px) {
+  .text-center-sm {
+    text-align: center !important;
+  }
+  
+  .text-left-sm {
+    text-align: left !important;
+  }
+  
+  .text-right-sm {
+    text-align: right !important;
+  }
+}
+
+/* Spacing adjustments for mobile */
+@media (max-width: 768px) {
+  .section {
+    padding: 60px 0;
+  }
+  
+  .section-header {
+    margin-bottom: 40px;
+  }
+  
+  .mb-sm-0 {
+    margin-bottom: 0 !important;
+  }
+  
+  .mb-sm-1 {
+    margin-bottom: 0.5rem !important;
+  }
+  
+  .mb-sm-2 {
+    margin-bottom: 1rem !important;
+  }
+  
+  .mb-sm-3 {
+    margin-bottom: 1.5rem !important;
+  }
+  
+  .mb-sm-4 {
+    margin-bottom: 2rem !important;
+  }
+  
+  .mb-sm-5 {
+    margin-bottom: 3rem !important;
+  }
+}
+
+/* ======================================
+   IMAGE RESPONSIVENESS
+====================================== */
+
+/* Responsive images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 768px) {
+  .img-center-sm {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
