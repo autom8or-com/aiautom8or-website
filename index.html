@@ -35,16 +35,23 @@
     <!-- Navigation -->
     <nav class="navbar">
         <div class="container">
-            <a href="#" class="logo">AI<span>Autom8or</span></a>
-            <ul class="nav-links">
-                <li><a href="#services">Services</a></li>
-                <li><a href="#industries">Industries</a></li>
-                <li><a href="#process">Process</a></li>
-                <li><a href="#pricing">Pricing</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-            <div class="mobile-menu">☰</div>
+            <a href="#" class="logo">
+                <span class="logo-text">AI<span>Autom8or</span></span>
+                <span class="logo-accent">.</span>
+            </a>
+            <div class="nav-wrapper">
+                <ul class="nav-links">
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#industries" class="nav-link">Industries</a></li>
+                    <li><a href="#process" class="nav-link">Process</a></li>
+                    <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#contact" class="btn btn-primary">Get Started</a></li>
+                </ul>
+            </div>
+            <button class="mobile-menu" aria-label="Toggle Menu">
+                <span class="hamburger"></span>
+            </button>
         </div>
     </nav>
     
@@ -52,14 +59,27 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Transforming Workflows, Unleashing Potential</h1>
-                <p>AIAutom8or helps Nigerian businesses automate processes, implement AI solutions, and achieve operational excellence.</p>
-                <div class="hero-buttons">
-                    <a href="#contact" class="btn btn-primary">Discover Your Automation Potential</a>
-                    <a href="#services" class="btn btn-secondary">See Our Solutions</a>
+                <span class="hero-badge">AI-Powered Automation</span>
+                <h1>Transform Your <span class="gradient-text">Business</span> Through Intelligent Automation</h1>
+                <p class="hero-subtitle">Helping Nigerian businesses automate processes, implement AI solutions, and achieve operational excellence.</p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary btn-lg">Start Your Journey</a>
+                    <a href="#services" class="btn btn-outline btn-lg">Explore Solutions</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">500+</span>
+                        <span class="stat-label">Processes Automated</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">98%</span>
+                        <span class="stat-label">Client Satisfaction</span>
+                    </div>
                 </div>
             </div>
-            <div class="hero-animation"></div>
+            <div class="hero-visual">
+                <!-- Add modern 3D illustration or animation -->
+            </div>
         </div>
     </section>
     
@@ -104,9 +124,15 @@
             </div>
             <div class="services-grid row justify-content-center">
                 <div class="service-card col-md-6 col-sm-12">
-                    <div class="service-icon">🔄</div>
+                    <div class="service-icon-wrapper">
+                        <div class="service-icon">🔄</div>
+                    </div>
                     <h3>Workflow Automation</h3>
                     <p>Streamline repetitive tasks and processes using n8n's powerful workflow engine</p>
+                    <a href="#contact" class="service-link">
+                        Learn More
+                        <svg class="arrow-icon"><!-- Add arrow SVG --></svg>
+                    </a>
                 </div>
                 <div class="service-card col-md-6 col-sm-12">
                     <div class="service-icon">🤖</div>
@@ -567,7 +593,7 @@
         <div class="chatbot-toggle">
             <span>💬</span>
         </div>
-        <div class="chatbot-window" style="display: none;">
+        <div class="chatbot-window">
             <div class="chatbot-header">
                 <h4>Automation Assistant</h4>
                 <span class="chatbot-close">×</span>

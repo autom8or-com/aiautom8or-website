@@ -8,8 +8,8 @@
     left: 0;
     width: 100%;
     z-index: 1000;
-    background-color: rgba(255, 255, 255, 0.95);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+    background: var(--surface-color);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
     padding: 15px 0;
     transition: var(--transition);
 }
@@ -116,12 +116,12 @@
 .nav-links a:after {
     content: '';
     position: absolute;
-    bottom: -5px;
+    bottom: -2px;
     left: 0;
     width: 0;
     height: 2px;
-    background-color: var(--teal);
-    transition: var(--transition);
+    background: var(--primary-gradient);
+    transition: width 0.3s ease;
 }
 
 .nav-links a:hover:after {

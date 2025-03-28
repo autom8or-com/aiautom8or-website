@@ -110,3 +110,21 @@ function createImagesFolder() {
     // This is just a placeholder, as this would typically be done server-side
     console.log('Images folder and placeholders would be created server-side');
 }
+
+// Cookie Consent Handler
+document.addEventListener('DOMContentLoaded', function() {
+    const cookieConsent = document.getElementById('cookieConsent');
+    const acceptButton = document.getElementById('acceptCookies');
+    
+    // Check if user has already accepted cookies
+    if (!localStorage.getItem('cookiesAccepted')) {
+        setTimeout(() => {
+            cookieConsent.classList.add('show');
+        }, 1000);
+    }
+    
+    acceptButton.addEventListener('click', function() {
+        localStorage.setItem('cookiesAccepted', 'true');
+        cookieConsent.classList.remove('show');
+    });
+});

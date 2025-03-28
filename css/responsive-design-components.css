@@ -285,6 +285,18 @@ Breakpoint definitions:
   .hero-animation {
     max-width: 100%;
   }
+  
+  .hero {
+    min-height: 70vh;
+  }
+  
+  .hero-stats {
+    grid-template-columns: 1fr;
+  }
+  
+  .service-card {
+    margin-bottom: 1.5rem;
+  }
 }
 
 /* ======================================
